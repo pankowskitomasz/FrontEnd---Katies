@@ -1,0 +1,56 @@
+$img-contact:
+    "../img/idx-s1-bg.jpg";
+$img-gall:
+    "../img/idx-s1-bg.jpg",
+    "../img/gallery-s2-bg.jpg";
+$img-index:
+    "../img/idx-s1-bg.jpg",
+    "../img/idx-s2-bg.jpg";
+$img-menu:
+    "../img/idx-s1-bg.jpg",
+    "../img/img-breakfast.jpg",
+    "../img/img-lunch.jpg",
+    "../img/img-dinner.jpg",
+    "../img/img-dessert.jpg",
+    "../img/img-drinks.jpg";
+$img-aoa:
+    $img-index,
+    $img-menu,
+    $img-gall,
+    $img-contact;
+$cls-arr:
+    "index-s",
+    "menu-s",
+    "gallery-s",
+    "contact-s";
+
+$bg-brw: #321809;
+$bg-wht: #fff;
+$cc-width: 20%;
+$font-logo: 'Caveat Brush';
+$font-logo-size: 30px;
+$font-logo-weight: 500;
+$font-menu: 'Righteous';
+$font-menu-size: 16px;
+$font-menu-weight: 400;
+$font-sign: 'Homemade Apple';
+$font-sign-size: 25px;
+$font-sign-weight: 100;
+$height-step: 25%;
+$icon-cup: "../img/cup_icon.png";
+$icon-item-color: #fff;
+$icon-item-size: 30px;
+$img-gall-mrg: 20px;
+$img-gall-shd: 1px 1px 10px #111;
+$lead-color: #666;
+$map-height: 300px;
+$map-width: 100%;
+$margin-step: 10px;
+$menu-list-padding: 20px;
+$navbar-tog-color: #fff;
+$opacity-step: 0.1;
+$padding-step: 10px;
+$spacer-margin: 20px;
+$section-spacer-height: 20px;
+$section-title-color: lighten(rgb(86,45,15),10%);
+$text-shadow: 1px 1px 3px #222;

@@ -1,0 +1,44 @@
+@media all and (max-width: 576px){
+    .lead,form *{
+        font-size: 11px;
+    }
+    .section-title{
+        font-size: 1.57rem;
+    }
+}
+
+@media all and (min-width: 576px){
+    .lead,form *{
+        font-size: 13px;
+    }
+    .section-title{
+        font-size: 1.64rem;
+    }
+}
+
+@media all and (min-width: 768px){
+    .lead,form *{
+        font-size: 15px;
+    }
+    .section-title{
+        font-size: 1.71rem;
+    }
+}
+
+@media all and (min-width: 992px){
+    .lead,form *{
+        font-size: 17px;
+    }
+    .section-title{
+        font-size: 1.78rem;
+    }
+}
+
+@media all and (min-width: 1200px){
+    .lead,form *{
+        font-size: 18px;
+    }
+    .section-title{
+        font-size: 1.85rem;
+    }
+}

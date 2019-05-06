@@ -1,0 +1,60 @@
+/*
+set-background - mixin responsible for setting up background image
+call:  @include set-background($imgA,$imgURL,$positionA,$sizeA,$attachA);
+params:
+--$imgA: path to image file, default: empty
+--$imgURL: flag indicating use of image_url in image path variable, default: 0
+----set it to 0, when image path was created by: [image_path/file_name]
+----set it to 1, when image path was created by: image_url([image_path/file_name])
+--$positionA: defines background-position, default: top top
+--$sizeA: defines background-size of background, default: cover
+--$attachA: defines background-attachment, default: fixed
+*/
+@mixin set-background($imgA:"",$imgURL:0,$positionA:"top left",$sizeA:"cover",$attachA:"fixed"){
+    background:{
+        attachment:#{$attachA};
+        @if($imgURL==1){
+            image: #{$imgA};
+        }
+        @else{
+            image: url(#{$imgA});
+        }
+        position: #{$positionA};
+        repeat: no-repeat;
+        size: #{$sizeA};
+    }
+}
+//---------------------------------------------------
+/*
+set-bg-series - creates series of css classes with attached background images 
+call:  set-bg-series($classNameA,$imgArrayA,[set-background-params])
+params:
+--$classNameA: class name, required, mixin wont work if empty
+--$imgArrayA: array of background images
+--[set-background-params]: refers to params for set-background mixin
+*/
+@mixin set-bg-series($classNameA,$imgArrayA:'',$imgURL:0,$positionA:"top left",$sizeA:"cover",$attachA:"fixed"){
+    @if($classNameA != ""){
+        @for $i from 1 through length($imgArrayA){
+            .#{$classNameA}-#{$i} {
+                @include set-background(nth($imgArrayA,$i),$imgURL,$positionA,$sizeA,$attachA);
+            }
+        }
+    }
+}
+//---------------------------------------------------
+/*
+aoa-bg-series - extends set-bg-series, replacing first two params by arrays of arrays,
+call: @include aoa-bg-series($classArrayA,$imgAoA:'',[set-bg-series-params]){
+params:
+--$classArrayA: array of classes, default empty
+--$imgAoA: array of backgroung images arrays, related to classes in $classArrayA default empty
+--[set-bg-series-params]: refers to params for set-bg-series mixin
+*/
+@mixin aoa-bg-series($classArrayA:'',$imgAoA:'',$imgURL:0,$positionA:"top left",$sizeA:"cover",$attachA:"fixed"){
+    @if (length($classArrayA) == length($imgAoA)){
+        @for $i from 1 through length($classArrayA){
+            @include set-bg-series(nth($classArrayA,$i),nth($imgAoA,$i),$imgURL,$positionA,$sizeA,$attachA);
+        }
+    }
+}

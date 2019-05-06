@@ -1,0 +1,273 @@
+@include aoa-bg-series($cls-arr,$img-aoa,0,"top left","cover","fixed");
+
+//heights
+@include set-prop-series("h","height",25,0,1,4,$height-step);
+
+//margins
+@include set-prop-series("m","margin",1,0,0,5,$margin-step);
+@include set-prop-series("mb","margin-bottom",1,0,0,5,$margin-step);
+@include set-prop-series("ml","margin-left",1,0,0,5,$margin-step);
+@include set-prop-series("mr","margin-right",1,0,0,5,$margin-step);
+@include set-prop-series("mt","margin-top",1,0,0,5,$margin-step);
+
+//paddings
+@include set-prop-series("p","padding",1,0,0,5,$padding-step);
+@include set-prop-series("pb","padding-bottom",1,0,0,5,$padding-step);
+@include set-prop-series("pl","padding-left",1,0,0,5,$padding-step);
+@include set-prop-series("pr","padding-right",1,0,0,5,$padding-step);
+@include set-prop-series("pt","padding-top",1,0,0,5,$padding-step);
+
+//opacity
+@include set-prop-series("opacity","opacity",1,0,0,10,$opacity-step);
+
+#pointsmap{
+	height: $map-height;
+	width: $map-width;
+}
+
+.bg{
+    &-brw{
+        background-color: $bg-brw !important;
+    }
+    &-white{
+        background-color: $bg-wht !important;
+    }
+}
+.bottom-menu{
+    &>li>a{
+        &:hover{
+            color: $bg-wht !important;
+        }
+        text-decoration: none;
+    }
+}
+.carousel{
+    &-control{
+        width: $cc-width !important;
+    }
+    &-indicators{
+        &>li{
+            &.active{            
+                background-color: transparent!important;
+                height: 3px;
+                margin-top: 22px;
+                width: 25px;
+            }
+            &:hover{
+                margin-top:0px;
+                height: 25px;
+            }
+            background-image: url($icon-cup);        
+            background-position: bottom center;
+            background-size: cover;
+            border: none;
+            border-radius: 0;
+            height: 18px;
+            margin-top: 7px;
+            width: 25px;
+        }
+        height:25px;
+    }
+}
+.contact-data{
+	margin-bottom: 40px;
+	padding-left: 0px;
+	padding-right: 0px;
+	form{
+		opacity: 0.7;
+		padding: 10px;
+		background-color: black;
+		.form-control{
+			margin-bottom: 5px
+		}
+		input{
+			&:focus{
+                background-color: black;
+                box-shadow: none!important;
+				color:white;
+			}
+			background-color: black;
+			border: none;
+			color: white;
+			box-shadow: none;
+			border-bottom: 1px solid silver;
+			border-radius: 0;
+		}
+		input[type="submit"], input[type="reset"]{
+			font-size: 0.9em;
+			background-color: black;
+			border-radius: 30px;
+			color: white;
+			cursor: pointer;
+			border: 1px solid white;
+			padding: 3px 10px;
+			margin: 6px;
+			margin-bottom:1px;
+			border-bottom: 1px solid silver;
+			&:hover{
+				border: 1px solid white;
+				color: black;
+				background-color: white;
+			}
+		}
+		textarea{
+			&:focus{
+				background-color: black;
+                box-shadow: none!important;
+				color:white;
+			}
+			background-color: black;
+			color: white;
+			border:none;
+			box-shadow: none;
+			border-radius: 0;
+			border-bottom: 1px solid silver;
+			resize: none;
+		}
+	}
+	div[class^="col"]{	
+		height: 300x;
+		&:first-of-type{
+			background-color: white;
+		}
+		&:nth-of-type(2){
+			padding-left: 0px;
+			padding-right: 0px;
+		}
+	}
+}
+.d{
+    &-flex{
+        display: flex;
+    }
+}
+.float-none{
+    float: none;
+}
+.font{
+    &-logo{
+        font-family: $font-logo;
+        font-size: $font-logo-size;
+        font-weight: $font-logo-weight;
+    }
+    &-menu{
+        font-family: $font-menu;
+        font-size: $font-menu-size;
+        font-weight: $font-menu-weight;
+    }
+    &-sign{
+        font-family: $font-sign;
+        font-size: $font-sign-size;
+        font-weight: $font-sign-weight;
+    }
+}
+.icon-item{
+    &:hover{
+        color: $bg-wht!important;
+    }
+    color: $section-title-color !important;
+    font-size: $icon-item-size;
+}
+.img-gall{
+    box-shadow: $img-gall-shd;
+    margin-bottom: $img-gall-mrg;
+    margin-top: $img-gall-mrg;
+}
+.lead{
+    color: $lead-color;
+}
+.left, .right{
+    background-image: none !important;
+}
+.m{
+    &x-auto{
+        margin-left: auto;
+        margin-right: auto;
+    }
+    &y-auto{
+        margin-bottom: auto;
+        margin-top: auto;
+    }
+}
+.menu-list{
+    dd{
+        padding: $menu-list-padding;
+    }
+    dt{
+        color: $section-title-color;
+        font-family: $font-menu;
+    }
+}
+.navbar{ 
+    &-nav{
+        &>li{
+            &>a{
+                &:hover{
+                    color: $section-title-color !important;
+                    text-decoration: none;
+                    text-shadow: none;
+                }
+                color: $bg-wht !important;
+            }
+        }
+    }
+    &-toggle{
+        border-color: $navbar-tog-color;
+        color: $navbar-tog-color;
+    }
+}
+.p{
+    &x-auto{
+        margin-left:auto !important;
+        margin-right: auto !important;
+    }
+    &y-auto{
+        margin-bottom: auto !important;
+        margin-top: auto !important;
+    }
+}
+.position{
+    &-absolute{
+        position: absolute;
+    }
+}
+.spacer{
+    .inside{
+        background-color: transparent;
+        color: $section-title-color;
+        font-size: 30px;
+        margin-left: 50%;        
+        position: relative;
+        top: 5px;
+        transform: translateX(-50%); 
+    }
+    border-bottom: 3px solid $section-title-color;
+    display: flex;
+    height: 30px;
+    margin-bottom: $spacer-margin;
+}
+.section{
+    &-spacer{
+        height: $section-spacer-height;
+    }
+    &-title{
+        color: $section-title-color !important;
+        font-family: $font-menu;
+    }
+}
+.text{
+    &-brw{    
+        color: $section-title-color !important;
+    }
+    &-shadow{
+        text-shadow: $text-shadow;
+    }
+    &-white{
+        color: $bg-wht !important;
+    }
+}
+.w{
+    &-100{
+        width: 100% !important;
+    }
+}
