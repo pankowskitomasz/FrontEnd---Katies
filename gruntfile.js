@@ -30,7 +30,9 @@ module.exports = function(grunt){
                 files:[
                     {src:"js/main.min.js",dest:"pub/"},
                     {src:"css/styles.min.css",dest:"pub/"},
+                    {src:"css/font-awesome.min.css",dest:"pub/"},
                     {src:"img/*",dest:"pub/"},
+                    {src:"img/gallery/*",dest:"pub/"},
                     {src:"fonts/*",dest:"pub/"},
                     {src:"./.htaccess",dest:"pub/"},
                     {src:"./*.html",dest:"pub/"},
