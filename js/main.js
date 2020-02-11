@@ -1,3 +1,7 @@
+$("input, textarea").on("paste",function(){
+    return false;
+});
+
 function pointsMap() {
 	var opts = {
 	    center: new google.maps.LatLng(37.752788, -122.426771),
@@ -30,38 +34,101 @@ function pointsMap() {
 	 	});
 }
 
-function updateFrm(){
-    $(".contact-form").attr("action","message.php#msg");
-}
-setTimeout(updateFrm,11000);
-
-function setCookie(paramA, valueA, durationA) {
-  var now = new Date();
-  now.setTime(now.getTime() + (durationA*24*60*60*1000));
-  var expires = "expires="+ now.toUTCString();
-  document.cookie = paramA + "=" + valueA + ";" + expires + ";path=/";
-}
-
-function getCookie(paramA) {
-    var param = paramA + "=";
-    var decodedStr = decodeURIComponent(document.cookie);
-    var cookieArray = decodedStr.split(';');
-    var i;
-    for(i=0; i<cookieArray.length; i++) {
-        if (cookieArray[i].indexOf(paramA)>=0) {
-            return cookieArray[i].split("=")[1];
+function checkFormText(){
+    var inputArray = $("input[type='text']");
+    var rgx = new RegExp(/[^a-zA-Z]+$/i);  
+    for(var i=0;i<inputArray.length;i++){
+        if(inputArray[i].value.match(rgx)){
+            return false;
         }
     }
+    return true;
 }
 
-if(getCookie("rodoAccept")!=="1"){
-    var gpdrMsg = "GDPR declaration - this is website demo, so it doesn't store any data.\n";
-    gpdrMsg += "All data entered by You in forms on this website are processed only\n";
-    gpdrMsg += "in order to present operation of website mechanisms and then\n";
-    gpdrMsg += "are removed.\n";
-    gpdrMsg += "Click OK if you accept presented rules of data use and processing";
-    var gpdrAccept = confirm(gpdrMsg);
-    if(gpdrAccept===true){
-        setCookie("rodoAccept","1",1);
+function checkFormTel(){
+    var inputArray = $("input[type='tel']");
+    var rgx = new RegExp(/[^0-9]+$/i);  
+    for(var i=0;i<inputArray.length;i++){
+        if(inputArray[i].value.match(rgx)){
+            return false;
+        }
+    }
+    return true;
+}
+
+function checkFormEmail(){
+    var inputArray = $("input[type='email']");
+    var rgx = new RegExp(/[^a-zA-Z0-9.@]+$/i);
+    for(var i=0;i<inputArray.length;i++){
+        if(inputArray[i].value.match(rgx)){
+            return false;
+        }
+    }
+    return true;
+}
+
+function checkFormTextarea(){
+    var inputArray = $("input[type='textarea']");
+    var rgx = new RegExp(/[^a-zA-Z0-9.,!?#\- ]+$/i);
+    for(var i=0;i<inputArray.length;i++){
+        if(inputArray[i].value.match(rgx)){
+            return false;
+        }
+    }
+    return true;
+}
+
+function checkForm(){
+    if(checkFormText()===true
+        && checkFormTel()===true
+        && checkFormEmail()===true
+        && checkFormTextarea()===true){
+            return true;
+        }
+    return false;
+}
+
+function swapTarget(){
+    $(".contact-form").attr("action","message.php#msg");
+}
+
+function setCookie(cname, cvalue, exdays) {
+    var d = new Date();
+    d.setTime(d.getTime() + (exdays*24*60*60*1000));
+    var expires = "expires="+ d.toUTCString();
+    document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+}
+
+function getCookie(cname) {
+    var name = cname + "=";
+    var decodedCookie = decodeURIComponent(document.cookie);
+    var ca = decodedCookie.split(';');
+    for(var i = 0; i <ca.length; i++) {
+      var c = ca[i];
+      while (c.charAt(0) == ' ') {
+        c = c.substring(1);
+      }
+      if (c.indexOf(name) == 0) {
+        return c.substring(name.length, c.length);
+      }
+    }
+    return "";
+}
+
+function acceptPrivacyPolicy(){
+    setCookie("privacy_accepted","1",1);
+    $("#privacyModal").modal('hide');
+}
+
+function gpdrDeclaration(){
+    if(getCookie("privacy_accepted")!="1"){
+        $("#privacyModal").modal();
     }
 }
+
+$("#modal-portfolio, #modal-portfolio *").click(function(){
+    $(this).modal('hide');
+});
+
+gpdrDeclaration();
+setTimeout(swapTarget,11000);

@@ -77,7 +77,7 @@
                 </div>
             </div>
         </div>
-        <div class="row pb-2">
+        <div class="row">
             <ul class="list-inline text-uppercase text-center font-menu bottom-menu">
                 <li><a href="index.html" class="text-brw">Home</a></li>
                 <li><a href="menu.html" class="text-brw">Menu</a></li>
@@ -96,10 +96,45 @@
                 </a></li>
             </ul>
         </div>
-        <div class="row">
-            <p class="text-center">Copyright &copy; 2019</p>
+        <div class="row d-flex">
+            <small class="mx-auto w-75 border-top border-dark text-secondary my-0">
+                Website demo, Copyright &copy; 2019-2020 | 
+                <a href="privacy.html" class="text-brw">Privacy</a>
+            </small>
         </div>
-    </footer>    
+    </footer>
+    <div class="modal" id="privacyModal">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header text-center">
+                    <h4 class="font-header text-secondary">GPDR Declaration</h4>
+                </div>
+                <div class="modal-body">
+                    <p class="initialism">
+                        This website is a <span class="text-danger"> demo version </span> of real website,  It doesn't collect and process,
+                        in long term meaning (longer than needed for website operation during visitor's
+                        presence), any user (visitor) data. All information collected during visitor's 
+                        presence on this website is used only for technical purposes, required for 
+                        correct operation of website or demonstration purposes related to technical 
+                        mechanisms and presentation of its operation... 
+                        <a href="privacy.html" class="label label-primary">More about privacy</a>
+                    </p>                        
+                    <p class="initialism">
+                        If you accept privacy policy please click button "accept". If you 
+                        refuse it, leave page by closing it in your web browser, please.
+                    </p>
+                </div>
+                <div class="modal-footer">
+                    <div class="text-center w-100">
+                        <button class="btn btn-success"
+                            onclick="acceptPrivacyPolicy()">
+                            Accept
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>     
     <script type="text/javascript" src="js/main.min.js"></script>
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAh1xIfMS6UqeltTwp9dL-LtRcRb6J9ao8&callback=pointsMap"></script>
 </body>
