@@ -42,9 +42,9 @@
         </div>
     </nav>
     <section class="container-fluid index-s-1"></section>      
-    <div class="section-spacer"></div>
-    <section class="container-fluid" id="msg">
-        <div class="row my-auto w-100 d-flex ml-0">
+    <div class="section-spacer bg-brw"></div>
+    <section class="container-fluid gallery-s-2" id="msg">
+        <div class="row my-auto w-100 d-flex ml-0 py-5">
             <div class="col-xs-10 col-xs-offset-1 col-md-8 col-md-offset-2 p-4 mx-auto bg-white opacity-9">
                 <div class="row pb-3">
                     <h3 class="section-title text-uppercase text-center m-0">Message sent</h3>
@@ -126,11 +126,15 @@
                 </a></li>
             </ul>
         </div>
-        <div class="row">
-            <p class="text-center">Copyright &copy; 2019</p>
+        <div class="row text-center border-top pt-1 mx-2">
+            <small class="border-brw">
+                Copyright &copy; 2019-2021 Tomasz Pankowski
+                <a href="privacy.html" class="text-brw">
+                    Privacy policy
+                </a>
+            </small>
         </div>
     </footer>    
     <script type="text/javascript" src="js/main.min.js"></script>
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAh1xIfMS6UqeltTwp9dL-LtRcRb6J9ao8&callback=pointsMap"></script>
 </body>
 </html>

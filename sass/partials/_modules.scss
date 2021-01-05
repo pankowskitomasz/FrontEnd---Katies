@@ -33,6 +33,15 @@
         background-color: $bg-wht !important;
     }
 }
+.border{
+    &-brw{
+        border-color: $section-title-color !important;
+    }
+    &-top{
+        border-top-style: $border-style;
+        border-top-width: $border-width;
+    }
+}
 .bottom-menu{
     &>li>a{
         &:hover{
@@ -180,13 +189,25 @@
     background-image: none !important;
 }
 .m{
-    &x-auto{
-        margin-left: auto;
-        margin-right: auto;
+    &x{
+        &-auto{
+            margin-left: auto;
+            margin-right: auto;
+        }
+        &-2{            
+            margin-left: 20px;
+            margin-right: 20px;
+        }
     }
-    &y-auto{
-        margin-bottom: auto;
-        margin-top: auto;
+    &y{
+        &-auto{
+            margin-bottom: auto;
+            margin-top: auto;
+        }
+        &-3{            
+            margin-bottom: 30px;
+            margin-top: 30px;
+        }
     }
 }
 .menu-list{
@@ -221,9 +242,15 @@
         margin-left:auto !important;
         margin-right: auto !important;
     }
-    &y-auto{
-        margin-bottom: auto !important;
-        margin-top: auto !important;
+    &y{
+        &-auto{
+            margin-bottom: auto !important;
+            margin-top: auto !important;
+        }
+        &-5{
+            margin-bottom: 50px !important;
+            margin-top: 50px !important;
+        }
     }
 }
 .position{
